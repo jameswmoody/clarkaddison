@@ -21,16 +21,18 @@
     <th>Date</th>
     <th>Rating</th>
     <th>Description</th>
+    <th>Trigger</th>
   </tr>
   <% @dog.reactions.each do |reaction| %>
     <tr>
       <td><%= reaction.created_at.strftime('%b %e, %Y') %></td>
       <td><%= reaction.rating %></td>
       <td><%= reaction.description %></td>
+      <td><%= reaction.trigger %></td>
     </tr>
   <% end %>
 </table>
 
 <%= link_to 'New Reaction', new_reaction_path %>
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
+<%= link_to 'All Dogs', dogs_path %>

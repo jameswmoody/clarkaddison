@@ -24,7 +24,11 @@ class ReactionsController < ApplicationController
   # POST /reactions
   # POST /reactions.json
   def create
+    @dog = Dog.find(params[:dog_id])
     @reaction = Reaction.new(reaction_params)
+
+    @reaction.dog_id = @dog.id
+    @reaction.trigger = params[:trigger]
 
     respond_to do |format|
       if @reaction.save

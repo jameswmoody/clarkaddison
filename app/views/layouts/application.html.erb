@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Clarkaddison</title>
+    <title>Clark & Addison</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <div>
+      <ul style="list-style-type: none;">
+        <li style="display: inline-block;"><%= link_to 'Home', reactions_path %></li> |
+        <li style="display: inline-block;"><%= link_to 'Dogs', dogs_path %></li> |
+        <li style="display: inline-block;"><%= link_to 'Reactions', reactions_path %></li>
+      </ul>
+    <div>
     <%= yield %>
   </body>
 </html>

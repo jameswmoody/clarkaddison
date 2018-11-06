@@ -1,30 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Reactions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Rating</th>
-      <th>Dog</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div>
     <% @reactions.each do |reaction| %>
-      <tr>
-        <td><%= reaction.description %></td>
-        <td><%= reaction.rating %></td>
-        <td><%= reaction.dog_name %></td>
-        <td><%= link_to 'Show', reaction %></td>
-        <td><%= link_to 'Edit', edit_reaction_path(reaction) %></td>
-        <td><%= link_to 'Destroy', reaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class='reaction-list-item'>
+        <h3><%= reaction.created_at.strftime('%b %e, %Y') %></h3>
+        <p class='reaction-dog-name'><%= link_to reaction.dog_name, dog_path(reaction.dog_id) %></p>
+        <div class='reaction-rating'>
+          <p class='rating-label'>Rating</p>
+          <p class='rating-score'><%= reaction.rating %></p>
+        </div>
+        <p class='reaction-description'><%= reaction.description %></p>
+        <p class='reaction-trigger'><%= reaction.trigger %></p>
+        <p class='reaction-link'><%= link_to 'Show', reaction %></p>
+        <p class='reaction-link'><%= link_to 'Edit', edit_reaction_path(reaction) %></p>
+        <p class='reaction-link'><%= link_to 'Delete', reaction, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
 <br>
 

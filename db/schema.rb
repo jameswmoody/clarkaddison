@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_053307) do
+ActiveRecord::Schema.define(version: 2018_11_06_205438) do
 
   create_table "dogs", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2018_11_06_053307) do
     t.text "description"
     t.integer "rating"
     t.integer "dog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "trigger"
+  end
+
+  create_table "triggers", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.integer "reaction_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
