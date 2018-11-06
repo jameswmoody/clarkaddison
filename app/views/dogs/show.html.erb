@@ -6,9 +6,31 @@
 </p>
 
 <p>
-  <strong>Dob:</strong>
-  <%= @dog.dob %>
+  <strong>DOB:</strong>
+  <%= @dog.dob.strftime('%b %e, %Y') %>
 </p>
 
+<p>
+  <strong>Age:</strong>
+  <%= @dog.get_age() %>
+</p>
+
+  <strong>Reactions:</strong>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Rating</th>
+    <th>Description</th>
+  </tr>
+  <% @dog.reactions.each do |reaction| %>
+    <tr>
+      <td><%= reaction.created_at.strftime('%b %e, %Y') %></td>
+      <td><%= reaction.rating %></td>
+      <td><%= reaction.description %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Reaction', new_reaction_path %>
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
 <%= link_to 'Back', dogs_path %>
