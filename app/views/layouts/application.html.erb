@@ -25,14 +25,13 @@
           <br>
           <br>
           <br>
-          <ul style="list-style-type: none;">
-            <li style="display: inline-block;"><%= link_to 'Home', reactions_path %></li> |
-            <li style="display: inline-block;"><%= link_to 'Dogs', dogs_path %></li> |
-            <li style="display: inline-block;"><%= link_to 'Reactions', reactions_path %></li>
+          <ul class="nav-menu">
+            <li class="menu-item"><%= link_to 'Dogs', dogs_path %></li> |
+            <li class="menu-item"><%= link_to 'Reactions', reactions_path %></li>
           </ul>
         </nav>
       </header>
-      <section>
+      <section class='content'>
         <%= yield %>
       </section>
     </main>
