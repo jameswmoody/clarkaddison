@@ -25,6 +25,7 @@ class ReactionsController < ApplicationController
   # POST /reactions.json
   def create
     @dog = Dog.find(params[:dog_id])
+    @reactions = Reaction.all
     @reaction = Reaction.new(reaction_params)
 
     @reaction.dog_id = @dog.id
@@ -32,8 +33,8 @@ class ReactionsController < ApplicationController
 
     respond_to do |format|
       if @reaction.save
-        format.html { redirect_to @reaction, notice: 'Reaction was successfully created.' }
-        format.json { render :show, status: :created, location: @reaction }
+        format.html { redirect_to action: 'index', notice: 'Reaction was successfully created.' }
+        format.json { render :index, status: :created, location: @reaction }
       else
         format.html { render :new }
         format.json { render json: @reaction.errors, status: :unprocessable_entity }
@@ -43,17 +44,17 @@ class ReactionsController < ApplicationController
 
   # PATCH/PUT /reactions/1
   # PATCH/PUT /reactions/1.json
-  def update
-    respond_to do |format|
-      if @reaction.update(reaction_params)
-        format.html { redirect_to @reaction, notice: 'Reaction was successfully updated.' }
-        format.json { render :show, status: :ok, location: @reaction }
-      else
-        format.html { render :edit }
-        format.json { render json: @reaction.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @reaction.update(reaction_params)
+  #       format.html { redirect_to @reaction, notice: 'Reaction was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @reaction }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @reaction.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /reactions/1
   # DELETE /reactions/1.json
