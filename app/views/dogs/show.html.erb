@@ -5,6 +5,7 @@
     <div class='col-xs-12 dog-profile'>
       <div class='dog-profile-image-<%= @dog.name.downcase %>'></div>
       <h3><%= @dog.name %></h3>
+      <p><strong>Avg Rating:</strong> <%= @avg_rating %></p>
       <p><strong>Birthday:</strong> <%= @dog.dob.strftime('%b %e, %Y') %></p>
       <p><strong>Age:</strong> <%= @dog.get_age() %></p>
     </div>

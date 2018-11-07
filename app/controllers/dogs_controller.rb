@@ -10,6 +10,9 @@ class DogsController < ApplicationController
   # GET /dogs/1
   # GET /dogs/1.json
   def show
+    @dog = Dog.find(params[:id])
+    total = @dog.reactions.map { |reaction| reaction.rating }
+    @avg_rating = '%.2f' % (total.sum.to_f / @dog.reactions.size)
   end
 
   # GET /dogs/new
