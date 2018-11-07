@@ -4,14 +4,20 @@
 
 <div>
   <% @dogs.each do |dog| %>
-    <div class='dog-list-item row'>
-      <div class='col-xs-9 dog-details'>
-        <h3><%= dog.name %></h3>
-        <h5>Age: <%= dog.get_age %></h5>
-        <%= link_to 'Show', dog %>
+    <%= link_to dog do %>
+
+      <div class='dog-list-item row'>
+        <div class='col-xs-9 dog-details'>
+          <h3><%= dog.name %></h3>
+          <% total = dog.reactions.map { |reaction| reaction.rating } %>
+          <h5>Avg Rating: <%= '%.2f' % (total.sum.to_f / dog.reactions.size) %></h5>
+          <p>Age: <%= dog.get_age %></p>
+          <%= link_to 'Show', dog %>
+        </div>
+        <div class='col-xs-3 dog-image-<%= dog.name.downcase %>'>
+        </div>
       </div>
-      <div class='col-xs-3 dog-image-<%= dog.name.downcase %>'>
-      </div>
-    </div>
+
+    <% end %>
   <% end %>
 </div>
