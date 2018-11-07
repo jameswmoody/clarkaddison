@@ -1,3 +1,78 @@
 // Place all the styles related to the Reactions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.reaction-list-item {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.reaction-details {
+    display: inline-block;
+}
+
+.reaction-date {
+    margin-top: 0;
+    font-size: 2em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: #575757;
+}
+
+.reaction-dog-name {
+    font-size: 1.5em;
+    a {
+        text-decoration: none;
+    }
+}
+
+.reaction-description {
+    color: #b4b4b4;
+    font-style: italic;
+}
+
+.reaction-rating {
+    display: inline-block;
+    padding: 15px;
+    margin: auto;
+    border-style: solid;
+    border-color: #e8e8e8;
+    border-width: 1px;
+    border-radius: 10px;
+    .rating-label {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        color: #575757;
+        font-weight: bold;
+        font-size: 1.5em;
+        text-align: center;
+    }
+    .rating-score {
+        font-weight: bold;
+        font-size: 3em;
+        text-align: center;
+        color: #ffc107;
+    }
+    .positive-score {
+        color: #5cb85c;
+    }
+    .negative-score {
+        color: #d9534f;
+    }
+}
+
+.reaction-trigger {
+    color: #ffffff;
+    background-color: #17a2b8;
+    padding: 5px;
+}
+
+.new-reaction {
+    width: 66%;
+    margin: auto;
+    text-align: center;
+    margin: 0 auto;
+    color: #17a2b8;
+    background-color: #cacaca;
+    margin: 10px;
+}

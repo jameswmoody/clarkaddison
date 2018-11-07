@@ -2,23 +2,16 @@
 
 <h1>Dogs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Dob</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @dogs.each do |dog| %>
-      <tr>
-        <td><%= dog.name %></td>
-        <td><%= dog.dob %></td>
-        <td><%= link_to 'Show', dog %></td>
-        <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div>
+  <% @dogs.each do |dog| %>
+    <div class='dog-list-item row'>
+      <div class='col-xs-9 dog-details'>
+        <h3><%= dog.name %></h3>
+        <h5>Age: <%= dog.get_age %></h5>
+        <%= link_to 'Show', dog %>
+      </div>
+      <div class='col-xs-3 dog-image-<%= dog.name.downcase %>'>
+      </div>
+    </div>
+  <% end %>
+</div>

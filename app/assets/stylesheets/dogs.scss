@@ -1,3 +1,67 @@
 // Place all the styles related to the dogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dog-list-item {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.dog-details {
+    display: inline-block;
+    width: 60%;
+}
+
+.dog-image-clark, .dog-image-addison {
+    display: inline-block;
+    margin: auto;
+    border-style: solid;
+    border-color: #b1b1b1;
+    border-width: 1px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: contain;
+}
+
+.dog-image-clark {
+    background-image: image-url('clark_avatar.jpg');
+}
+
+.dog-image-addison {
+    background-image: image-url('addison_avatar.jpg');
+}
+
+.dog-profile-image-clark, .dog-profile-image-addison {
+    margin: 0 auto;
+    border-style: solid;
+    border-color: #b1b1b1;
+    border-width: 1px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-size: contain;
+}
+
+.dog-profile-image-clark {
+    background-image: image-url('clark_avatar.jpg');
+}
+
+
+.dog-profile-image-addison {
+    background-image: image-url('addison_avatar.jpg');
+}
+
+.dog-profile {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    p {
+        font-style: italic;
+        margin-bottom: 0;
+    }
+}

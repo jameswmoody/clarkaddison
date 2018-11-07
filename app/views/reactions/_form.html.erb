@@ -1,46 +1,48 @@
-<%= form_with(model: reaction, local: true) do |form| %>
-  <% if reaction.errors.any? %>
-    <div id='error_explanation'>
-      <h2><%= pluralize(reaction.errors.count, 'error') %> prohibited this reaction from being saved:</h2>
+<div class='container'>
+  <%= form_with(model: reaction, local: true) do |form| %>
+    <% if reaction.errors.any? %>
+      <div id='error_explanation'>
+        <h2><%= pluralize(reaction.errors.count, 'error') %> prohibited this reaction from being saved:</h2>
 
-      <ul>
-      <% reaction.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% reaction.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class='field'>
+      <%= form.label :description %>
+      <%= form.text_area :description, :class=> 'form-control' %>
+    </div>
+
+    <div class='field radio-inline'>
+      <%= form.label :rating %>
+      <%= form.radio_button :rating, '1', :checked => true %> 1
+      <%= form.radio_button :rating, '2', :checked => true %> 2
+      <%= form.radio_button :rating, '3', :checked => true %> 3
+      <%= form.radio_button :rating, '4', :checked => true %> 4
+      <%= form.radio_button :rating, '5', :checked => true %> 5
+      <%= form.radio_button :rating, '6', :checked => true %> 6
+      <%= form.radio_button :rating, '7', :checked => true %> 7
+      <%= form.radio_button :rating, '8', :checked => true %> 8
+      <%= form.radio_button :rating, '9', :checked => true %> 9
+      <%= form.radio_button :rating, '10', :checked => true %> 10
+    </div>
+
+    <div class='field'>
+      <%= form.label :dog_id %>
+      <%= select_tag(:dog_id, options_for_select([['Addison', 2], ['Clark', 1]]), :class => 'dog-list') %>
+    </div>
+
+    <div class='field'>
+      <%= form.label :trigger %>
+      <%= select_tag(:trigger, options_for_select([['Select One', ''], ['Other Dog', 'Other Dog'], ['Human', 'Human'], ['Outside Sounds', 'Outside Sounds'], ['Clark', 'Clark'], ['Addison', 'Addison'], ['Other', 'Other']]), :class => 'trigger-list') %>
+    </div>
+
+    <div>
+      <%= form.submit 'New', :class => 'btn new-reaction center-block' %>
     </div>
   <% end %>
-
-  <div class='field'>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class='field'>
-    <%= form.label :rating %>
-    <%= form.radio_button :rating, '1', :checked => true %> 1
-    <%= form.radio_button :rating, '2', :checked => true %> 2
-    <%= form.radio_button :rating, '3', :checked => true %> 3
-    <%= form.radio_button :rating, '4', :checked => true %> 4
-    <%= form.radio_button :rating, '5', :checked => true %> 5
-    <%= form.radio_button :rating, '6', :checked => true %> 6
-    <%= form.radio_button :rating, '7', :checked => true %> 7
-    <%= form.radio_button :rating, '8', :checked => true %> 8
-    <%= form.radio_button :rating, '9', :checked => true %> 9
-    <%= form.radio_button :rating, '10', :checked => true %> 10
-  </div>
-
-  <div class='field'>
-    <%= form.label :dog_id %>
-    <%= select_tag(:dog_id, options_for_select([['Addison', 2], ['Clark', 1]]), :class => 'dog-list') %>
-  </div>
-
-  <div class='field'>
-    <%= form.label :trigger %>
-    <%= select_tag(:trigger, options_for_select([['Select One', ''], ['Other Dog', 'Other Dog'], ['Human', 'Human'], ['Outside Sounds', 'Outside Sounds'], ['Clark', 'Clark'], ['Addison', 'Addison'], ['Other', 'Other']]), :class => 'trigger-list') %>
-  </div>
-
-  <div class='actions'>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

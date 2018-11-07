@@ -4,19 +4,37 @@
     <title>Clark & Addison</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <!-- Adds proper mobile rendering and prevents page zoom -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- When bookmarked, removes browser frame -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div>
-      <ul style="list-style-type: none;">
-        <li style="display: inline-block;"><%= link_to 'Home', reactions_path %></li> |
-        <li style="display: inline-block;"><%= link_to 'Dogs', dogs_path %></li> |
-        <li style="display: inline-block;"><%= link_to 'Reactions', reactions_path %></li>
-      </ul>
-    <div>
-    <%= yield %>
+    <main class="container-wide">
+      <header class="container-wide">
+        <nav class="bg-info">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <ul style="list-style-type: none;">
+            <li style="display: inline-block;"><%= link_to 'Home', reactions_path %></li> |
+            <li style="display: inline-block;"><%= link_to 'Dogs', dogs_path %></li> |
+            <li style="display: inline-block;"><%= link_to 'Reactions', reactions_path %></li>
+          </ul>
+        </nav>
+      </header>
+      <section>
+        <%= yield %>
+      </section>
+    </main>
   </body>
 </html>

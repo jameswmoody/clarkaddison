@@ -60,7 +60,7 @@ class ReactionsController < ApplicationController
   def destroy
     @reaction.destroy
     respond_to do |format|
-      format.html { redirect_to reactions_url, notice: 'Reaction was successfully destroyed.' }
+      format.html { redirect_to reactions_url, notice: 'Reaction was successfully deleted.' }
       format.json { head :no_content }
     end
   end

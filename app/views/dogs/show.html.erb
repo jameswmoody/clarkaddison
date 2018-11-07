@@ -1,38 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @dog.name %>
-</p>
+<div class='container'>
+  <div class='row'>
+    <div class='col-xs-12 dog-profile'>
+      <div class='dog-profile-image-<%= @dog.name.downcase %>'></div>
+      <h3><%= @dog.name %></h3>
+      <p><strong>Birthday:</strong> <%= @dog.dob.strftime('%b %e, %Y') %></p>
+      <p><strong>Age:</strong> <%= @dog.get_age() %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>DOB:</strong>
-  <%= @dog.dob.strftime('%b %e, %Y') %>
-</p>
+  <h3><%= @dog.name %>'s Reactions</h3>
+    <div class="text-center">
+      <%= link_to 'New Reaction', new_reaction_path, :class=>'btn new-reaction center-block' %>
+    </div>
 
-<p>
-  <strong>Age:</strong>
-  <%= @dog.get_age() %>
-</p>
+    <% @dog.reactions.order(created_at: :desc).each do |reaction| %>
+      <div class='reaction-list-item row'>
+        <div class='reaction-details col-md-10'>
+          <h3 class='reaction-date'><%= reaction.created_at.strftime('%b %e, %Y') %></h3>
+          <p class='reaction-dog-name'><%= link_to reaction.dog_name, dog_path(reaction.dog_id) %></p>
+          <p class='reaction-description'><%= reaction.description %></p>
+          <p>Triggers: <span class="badge badge-pill badge-default reaction-trigger"><%= reaction.trigger %></span></p>
+          <p class='reaction-links'><%= link_to 'Delete', reaction, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+        <div class='reaction-rating col-md-2'>
+          <p class='rating-label'>Rating</p>
+          <p class="rating-score <%= 'negative-score' if reaction.rating <= 3 %> <%= 'positive-score' if reaction.rating >= 7 %>">
+            <%= reaction.rating %>
+          </p>
+        </div>
+      </div>
+    <% end %>
 
-  <strong>Reactions:</strong>
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Rating</th>
-    <th>Description</th>
-    <th>Trigger</th>
-  </tr>
-  <% @dog.reactions.each do |reaction| %>
-    <tr>
-      <td><%= reaction.created_at.strftime('%b %e, %Y') %></td>
-      <td><%= reaction.rating %></td>
-      <td><%= reaction.description %></td>
-      <td><%= reaction.trigger %></td>
-    </tr>
-  <% end %>
-</table>
-
-<%= link_to 'New Reaction', new_reaction_path %>
-<%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'All Dogs', dogs_path %>
+  <%= link_to 'Back', dogs_path %>
+</div>
