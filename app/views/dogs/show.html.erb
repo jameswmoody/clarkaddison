@@ -19,7 +19,9 @@
     <% @dog.reactions.order(created_at: :desc).each do |reaction| %>
       <div class='reaction-list-item row'>
         <div class='reaction-details col-md-10'>
-          <h3 class='reaction-date'><%= reaction.created_at.strftime('%b %e, %Y') %></h3>
+          <h3 class='reaction-date'>
+            <span class='timestring'><%= reaction.created_at %></span>
+          </h3>
           <p class='reaction-dog-name'><%= link_to reaction.dog_name, dog_path(reaction.dog_id) %></p>
           <p class='reaction-description'><%= reaction.description %></p>
           <p>Triggers: <span class="badge badge-pill badge-default reaction-trigger"><%= reaction.trigger %></span></p>

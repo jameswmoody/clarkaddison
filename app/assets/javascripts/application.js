@@ -13,4 +13,15 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery
+//= require moment
 //= require_tree .
+
+(function() {
+    'use strict';
+     $(document).ready(function() {
+      $('.timestring').each(function() {
+        this.textContent = moment(this.textContent).format('lll');
+      });
+    });
+  })();

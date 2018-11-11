@@ -14,8 +14,10 @@
           <p>Age: <%= dog.get_age %></p>
           <%= link_to 'Show', dog %>
         </div>
-        <div class='col-xs-3 dog-image-<%= dog.name.downcase %>'>
-        </div>
+        <%= link_to dog, class: 'profile-image-link' do %>
+          <div class='col-xs-3 dog-image-<%= dog.name.downcase %>'>
+          </div>
+        <% end %>
       </div>
 
     <% end %>
