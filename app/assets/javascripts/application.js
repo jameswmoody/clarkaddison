@@ -17,11 +17,24 @@
 //= require moment
 //= require_tree .
 
-(function() {
-    'use strict';
-     $(document).ready(function() {
-      $('.timestring').each(function() {
-        this.textContent = moment(this.textContent).format('lll');
-      });
+(function () {
+  'use strict';
+  $(document).ready(function () {
+    $('.timestring').each(function () {
+      this.textContent = moment(this.textContent).format('lll');
     });
-  })();
+  });
+})();
+
+$(document).ready(function () {
+  $('.animated-icon1')
+    .click(function () {
+      $(this).toggleClass('open');
+    });
+});
+
+$(document).ready(function () {
+  $('.navbar-toggler').on('click', function () {
+    $('.animated-icon1').toggleClass('open');
+  });
+});
