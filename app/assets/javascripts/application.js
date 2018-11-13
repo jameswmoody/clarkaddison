@@ -21,7 +21,8 @@
   'use strict';
   $(document).ready(function () {
     $('.timestring').each(function () {
-      this.textContent = moment(this.textContent).format('lll');
+      const timestamp = new Date(this.textContent);
+      this.textContent = moment(timestamp).format('MMM Do YYYY, h:mm A');
     });
   });
 })();
