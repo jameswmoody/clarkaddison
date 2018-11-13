@@ -9,8 +9,11 @@
       <div class='dog-list-item row'>
         <div class='col-xs-9 dog-details'>
           <h3><%= dog.name %></h3>
-          <% total = dog.reactions.map { |reaction| reaction.rating } %>
-          <h5>Avg Rating: <%= '%.2f' % (total.sum.to_f / dog.reactions.size) %></h5>
+          <% if dog.reactions.any? %>
+            <% total = dog.reactions.map { |reaction| reaction.rating } %>
+            <% rating = '%.2f' % (total.sum.to_f / dog.reactions.size) %>
+            <h5>Avg Rating: <%= rating %></h5>
+          <% end %>
           <p>Age: <%= dog.get_age %></p>
           <%= link_to 'Show', dog %>
         </div>

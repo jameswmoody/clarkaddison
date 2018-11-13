@@ -14,7 +14,7 @@
     width: 60%;
 }
 
-.dog-image-clark, .dog-image-addison {
+.dog-image-clark, .dog-image-addison, .dog-image-zogi {
     display: inline-block;
     margin: auto;
     border-style: solid;
@@ -34,8 +34,11 @@
     background-image: image-url('addison_avatar.jpg');
 }
 
-.dog-profile-image-clark, .dog-profile-image-addison {
-    // margin: 0 auto;
+.dog-image-zogi {
+    background-image: image-url('zogi_avatar.jpg');
+}
+
+.dog-profile-image-clark, .dog-profile-image-addison, .dog-profile-image-zogi  {
     margin: auto;
     border-style: solid;
     border-color: #b1b1b1;
@@ -53,6 +56,10 @@
 
 .dog-profile-image-addison {
     background-image: image-url('addison_avatar.jpg');
+}
+
+.dog-profile-image-zogi {
+    background-image: image-url('zogi_avatar.jpg');
 }
 
 .dog-profile {
