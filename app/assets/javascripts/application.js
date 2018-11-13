@@ -21,14 +21,13 @@
   'use strict';
   $(document).ready(function () {
     $('.timestring').each(function () {
-      const timestamp = new Date(this.textContent);
-      this.textContent = moment(timestamp).format('MMM Do YYYY, h:mm A');
+      this.textContent = moment(this.textContent).format('MMM Do YYYY, h:mm A');
     });
   });
 })();
 
 $(document).ready(function () {
-  $('.animated-icon1')
+  $('.animated-icon')
     .click(function () {
       $(this).toggleClass('open');
     });
