@@ -19,16 +19,19 @@
 
     <div class='field radio-inline'>
       <%= form.label :rating %>
-      <%= form.radio_button :rating, '1', :checked => true %> 1
-      <%= form.radio_button :rating, '2', :checked => true %> 2
-      <%= form.radio_button :rating, '3', :checked => true %> 3
-      <%= form.radio_button :rating, '4', :checked => true %> 4
-      <%= form.radio_button :rating, '5', :checked => true %> 5
-      <%= form.radio_button :rating, '6', :checked => true %> 6
-      <%= form.radio_button :rating, '7', :checked => true %> 7
-      <%= form.radio_button :rating, '8', :checked => true %> 8
-      <%= form.radio_button :rating, '9', :checked => true %> 9
-      <%= form.radio_button :rating, '10', :checked => true %> 10
+      <label class='rating-label'><%= form.radio_button :rating, '1' %>1</label>
+      <label class='rating-label'><%= form.radio_button :rating, '2' %>2</label>
+      <label class='rating-label'><%= form.radio_button :rating, '3' %>3</label>
+      <label class='rating-label'><%= form.radio_button :rating, '4' %>4</label>
+      <label class='rating-label'><%= form.radio_button :rating, '5' %>5</label>
+      <label class='rating-label'><%= form.radio_button :rating, '6' %>6</label>
+      <label class='rating-label'><%= form.radio_button :rating, '7' %>7</label>
+      <label class='rating-label'><%= form.radio_button :rating, '8' %>8</label>
+      <label class='rating-label'><%= form.radio_button :rating, '9' %>9</label>
+      <label class='rating-label'><%= form.radio_button :rating, '10', :checked => true %>10</label>
+      <br>
+      <%= image_tag('low-rating.png', class: 'low-rating') %>
+      <%= image_tag('high-rating.png', class: 'high-rating') %>
     </div>
 
     <div class='field'>
