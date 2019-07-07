@@ -1,24 +1,36 @@
-# README
+![Clark and Addision](http://jameswmoody.com/images/clark-addison.jpg)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
 
-Things you may want to cover:
+These instructions will get you a copy of the Clark and Addison app up and running on your local machine for development and testing purposes.
 
-* Ruby version
+### Installing
 
-* System dependencies
+1. Clone this repo. [Click here](https://help.github.com/articles/cloning-a-repository/) if you need more information.
 
-* Configuration
+2. Change to the directory
+```
+$ cd tab-out
+```
 
-* Database creation
+3. Bundle install
+```
+$ bundle install
+```
 
-* Database initialization
+4. Create and migrate the database with rake commands
+```
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
+```
 
-* How to run the test suite
+5. Run the Rails server
+```
+$ bundle exec rails server
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+6. Open browser and go to `localhost:3000` to view
 
-* Deployment instructions
+## License
 
-* ...
+This project is licensed under the MIT License.
